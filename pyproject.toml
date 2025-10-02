@@ -1,0 +1,16 @@
+[project]
+name = "nbox-cli"
+version = "0.1.0"
+description = "Nbox CLI client"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic-settings>=2.11.0",
+    "requests>=2.32.5",
+    "typer>=0.19.2",
+    "rich>=13.0.0",
+    "inquirer>=3.4.1",
+]
+
+[project.scripts]
+nbox = "nbox_cli:app"
