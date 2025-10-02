@@ -117,10 +117,10 @@ nbox create-entry /global/example/secret "secret value" --secure
 
 ### Create Multiple Entries from File
 
-Create multiple entries from a JSON file (Nbox format):
+Create multiple entries from a JSON file (Nbox format *Default*):
 
 ```bash
-nbox create-entries nbox.json --type nbox
+nbox create-entries nbox.json
 ```
 
 Create entries from a .env file:
