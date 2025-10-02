@@ -49,6 +49,14 @@ You will be prompted to enter:
 - **Username**: Your Nbox username
 - **Password**: Your password
 
+Alternatively, you can provide credentials directly using flags:
+
+```bash
+nbox login --username your-username --password your-password
+# or using short flags
+nbox login -u your-username -p your-password
+```
+
 The authentication token will be stored in `~/.config/nboxcli/credentials` and used for all subsequent requests.
 
 ## Usage
