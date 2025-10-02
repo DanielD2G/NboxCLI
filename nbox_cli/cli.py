@@ -293,17 +293,19 @@ def _parse_env_file(content, nbox_path):
 
 def _parse_nbox_json(content):
     entries_json = json.loads(content)
-    # Validate entries format
     if not isinstance(entries_json, list):
-        raise ValueError("entries_json must be a list")
+        typer.secho("❌ Unsupported JSON format", fg=typer.colors.YELLOW)
+        raise typer.Exit(code=1)
 
     data = []
     for entry in entries_json:
         if not isinstance(entry, dict):
-            raise ValueError("Each entry must be a dictionary")
+            typer.secho("❌ Unsupported JSON format", fg=typer.colors.YELLOW)
+            raise typer.Exit(code=1)
 
         if "key" not in entry or "value" not in entry:
-            raise ValueError("Each entry must contain 'key' and 'value' fields")
+            typer.secho("❌ Each entry must contain 'key' and 'value' fields", fg=typer.colors.YELLOW)
+            raise typer.Exit(code=1)
 
         key = entry["key"].lstrip("/") if isinstance(entry["key"], str) else entry["key"]
         value = entry["value"]
