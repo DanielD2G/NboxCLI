@@ -64,19 +64,19 @@ The authentication token will be stored in `~/.config/nboxcli/credentials` and u
 Retrieve a configuration entry by its key:
 
 ```bash
-nbox get-entry /global/example/debug
+nbox get-entry global/example/debug
 ```
 
 With JSON output:
 
 ```bash
-nbox get-entry /global/example/debug --output json
+nbox get-entry global/example/debug --output json
 ```
 
 Decrypt secure value:
 
 ```bash
-nbox get-entry /global/example/secret --decrypt
+nbox get-entry global/example/secret --decrypt
 ```
 
 ### Get Entries by Path Prefix
@@ -84,19 +84,19 @@ nbox get-entry /global/example/secret --decrypt
 Retrieve all entries matching a path prefix:
 
 ```bash
-nbox get-path /global/example
+nbox get-path global/example
 ```
 
 With JSON output:
 
 ```bash
-nbox get-path /global/example --output json
+nbox get-path global/example --output json
 ```
 
 Decrypt secure values:
 
 ```bash
-nbox get-path /global/example --decrypt
+nbox get-path global/example --decrypt
 ```
 
 ### Create a New Entry
@@ -104,13 +104,13 @@ nbox get-path /global/example --decrypt
 Create a new configuration entry:
 
 ```bash
-nbox create-entry /global/example/new-key "my value"
+nbox create-entry global/example/new-key "my value"
 ```
 
 Create a secure entry:
 
 ```bash
-nbox create-entry /global/example/secret "secret value" --secure
+nbox create-entry global/example/secret "secret value" --secure
 ```
 
 ### Create Multiple Entries from File
@@ -124,7 +124,7 @@ nbox create-entries nbox.json
 Create entries from a .env file:
 
 ```bash
-nbox create-entries .env --type dotenv --nbox-path /global/example
+nbox create-entries .env --type dotenv --nbox-path global/example
 ```
 
 Skip changeset creation (no confirmation):
@@ -137,12 +137,12 @@ nbox create-entries nbox.json --type nbox --no-changeset
 ```json
 [
   {
-    "key": "/global/example/debug",
+    "key": "global/example/debug",
     "value": "true",
     "secure": false
   },
   {
-    "key": "/global/example/api-key",
+    "key": "global/example/api-key",
     "value": "secret123",
     "secure": true
   }
@@ -161,13 +161,13 @@ DATABASE_URL=postgresql://localhost/db
 Remove a configuration entry:
 
 ```bash
-nbox remove-entry /global/example/old-key
+nbox remove-entry global/example/old-key
 ```
 
 Skip confirmation:
 
 ```bash
-nbox remove-entry /global/example/old-key --no-confirmation
+nbox remove-entry global/example/old-key --no-confirmation
 ```
 
 ## Available Commands
@@ -202,7 +202,7 @@ nbox remove-entry /global/example/old-key --no-confirmation
 
 - `--type` - Input format: `nbox` (default) or `dotenv`
 - `--no-changeset` - Skip changeset creation and confirmation
-- `<nbox-path>` - Required when using `--type dotenv`: the base path for entries
+- `--nbox-path` - Required when using `--type dotenv`: the base path for entries
 
 ### remove-entry Options
 
