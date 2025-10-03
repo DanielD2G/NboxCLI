@@ -4,9 +4,7 @@ A command-line interface for interacting with [Nbox](https://github.com/norlis/n
 
 ## About Nbox
 
-Nbox is a centralized configuration management system. This CLI tool provides an easy way to interact with Nbox servers from the command line.
-
-**Special thanks to the [Nbox project](https://github.com/norlis/nbox) for providing the management system.**
+[Nbox](https://github.com/norlis/nbox) is a centralized configuration management system. This CLI tool provides an easy way to interact with Nbox servers from the command line.
 
 ## Installation
 
@@ -15,7 +13,7 @@ Nbox is a centralized configuration management system. This CLI tool provides an
 You can install Nbox CLI directly from the repository using pip:
 
 ```bash
-pip install git+https://github.com/DanielD2G/NboxCLI.git
+pip install git+https://github.com/DanielD2G/NboxCLI.git@main
 ```
 
 ### Install from Local Repository
